@@ -9,6 +9,7 @@ def make_sequence():
     sequence = [random.choice(COLORS) for _ in range(SIZE)]
     return sequence
 
+
 def check(sequence, attempt):
     in_place = 0
     in_sequence = 0
@@ -21,14 +22,16 @@ def check(sequence, attempt):
 
     return in_place, in_sequence
 
+
 def is_correct(attemp):
     for idx, item in enumerate(attemp):
         if item not in COLORS:
             return False, idx
     return True, -1
 
+
 def main():
-    print("Available colors: %r" % COLORS)
+    print("Available colors: %s" % " ".join(COLORS))
     sequence = make_sequence()
     try:
         while True:
@@ -48,7 +51,6 @@ def main():
                 break
     except KeyboardInterrupt:
         print("Bye!")
-
 
 
 if __name__ == "__main__":
